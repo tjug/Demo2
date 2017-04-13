@@ -12,6 +12,11 @@ pipeline {
                   echo 'Look at me I\'m executing a build step'
             }
         }
+        stage ('archive') {
+            steps {
+                    archiveArtifacts 'target/*.jar'
+            }
+        }
     }
     post {
         always {
